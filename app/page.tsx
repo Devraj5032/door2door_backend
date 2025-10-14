@@ -32,7 +32,7 @@ async function getInitialData() {
     });
 
     return {
-      data: data.map(item => ({
+      data: data.map((item: any )=> ({
         ...item,
         createdAt: item.createdAt.toISOString(),
       })),
