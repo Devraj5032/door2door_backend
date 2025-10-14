@@ -1,0 +1,20 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../app/generated/prisma"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model CollectionData {
+  id                Int      @id @default(autoincrement())
+  house_id          String
+  Image1            String
+  Image2            String?
+  createdAt         DateTime @default(now())
+  Image1_prediction Json
+  Image2_prediction Json?
+}
