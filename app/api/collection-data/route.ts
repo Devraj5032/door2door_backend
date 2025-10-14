@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
+import { CollectionData } from "@/app/generated/prisma";
 
 export async function GET(req: NextRequest) {
   try {
@@ -48,7 +49,7 @@ export async function GET(req: NextRequest) {
     });
 
     // Convert dates to ISO strings for JSON serialization
-    const formattedData = data.map(item => ({
+    const formattedData = data.map((item: CollectionData )=> ({
       ...item,
       createdAt: item.createdAt.toISOString(),
     }));
