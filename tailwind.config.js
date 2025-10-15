@@ -6,7 +6,7 @@ module.exports = {
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
-  ],
+  ].map((p) => p.replace(/^\.{1}\//, "./")),
   prefix: "",
   theme: {
     container: {

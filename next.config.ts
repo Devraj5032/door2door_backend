@@ -14,16 +14,9 @@ const nextConfig: NextConfig = {
     // Stop following symlinks outside your project
     config.resolve.symlinks = false;
 
-    // Ignore system folders
+    // Ignore common project-local folders only
     config.watchOptions = {
-      ignored: [
-        '**/node_modules/**',
-        '**/.git/**',
-        'C:/Users/**',
-        '**/AppData/**',
-        '**/Application Data/**',
-        '**/Cookies/**',
-      ],
+      ignored: ['**/node_modules/**', '**/.git/**'],
     };
 
     return config;

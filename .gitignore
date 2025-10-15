@@ -40,4 +40,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-/app/generated/prisma
+# Prisma will generate into node_modules/.prisma by default
+# Remove the custom output as we now import from @prisma/client
