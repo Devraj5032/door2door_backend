@@ -1,0 +1,15 @@
+// next.config.js
+const path = require('path');
+
+module.exports = {
+  webpack(config) {
+    config.watchOptions = {
+      ignored: [
+        '**/node_modules',
+        '**/.git',
+        'C:/Users/**', // Ignore system folders
+      ],
+    };
+    return config;
+  },
+};
