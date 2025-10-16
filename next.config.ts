@@ -4,6 +4,14 @@ import path from "path";
 const nextConfig: NextConfig = {
   eslint: { ignoreDuringBuilds: true },
   typescript: { ignoreBuildErrors: true },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+      },
+    ],
+  },
   webpack: (config, { dir }) => {
     config.snapshot = config.snapshot || {};
     config.snapshot.managedPaths = [path.join(dir, "node_modules")];

@@ -12,7 +12,12 @@ interface ImageModalProps {
 
 export default function ImageModal({ isOpen, onClose, imageUrl, title = "Image Preview" }: ImageModalProps) {
   return (
-    <Dialog open={isOpen} onOpenChange={onClose}>
+    <Dialog
+      open={isOpen}
+      onOpenChange={(open) => {
+        if (!open) onClose();
+      }}
+    >
       <DialogContent className="max-w-4xl max-h-[90vh] p-0">
         <DialogHeader className="p-6 pb-0">
           <DialogTitle>{title}</DialogTitle>
